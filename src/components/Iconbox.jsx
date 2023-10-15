@@ -1,13 +1,14 @@
-import { Box, Grid, Icon } from '@shopify/polaris'
-import React from 'react'
+import { Box, Grid } from '@shopify/polaris'
 
-export default function Iconbox({cardIconColor,iconSize,cardBgColor,cardTitleColor,cardSubTitleColor,titleFontSize,titleSubFontSize ,titleFontWeight ,titleSubFontWeight}) {
+export default function Iconbox({checked,spaceBtnBlock,cardIconColor,iconSize,cardBgColor,cardTitleColor,cardSubTitleColor,titleFontSize,titleSubFontSize ,titleFontWeight ,titleSubFontWeight}) {
+    const spaceBetweenblock = (spaceBtnBlock/2);
+    const cardBackgroundColor = checked ? "transparent":cardBgColor
   return (
     <Box  borderColor="border" borderWidth="1">
-        <div className='tedt' style={{border:'1px solid #f4f4f4',background:cardBgColor}}>
+        <div className='tedt' style={{border:'1px solid #f4f4f4',background:cardBackgroundColor}}>
             <Grid > 
                 <Grid.Cell gap="lg" columnSpan={{ xs: 4, sm: 3, md: 3, lg: 6, xl: 3 }}>
-                    <div style={{padding:"15px",textAlign:"center"}}>
+                    <div style={{padding:"15px",textAlign:"center",margin:`0 ${spaceBetweenblock}%`}}>
                         <GrinningFace width={`${iconSize}px`}  iconColor={cardIconColor} />
                         <div style={{width:"100%"}}>
                             <h5  style={{lineHeight:1.2,fontWeight:titleFontWeight,color:cardTitleColor,fontSize:`${titleFontSize}px`}}>Any questions??</h5>

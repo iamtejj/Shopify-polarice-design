@@ -5,7 +5,7 @@ import {
     RangeSlider,
     TextField
 } from "@shopify/polaris";
-export default function Spacing({rangeValue,handleRangeSliderChange}) {
+export default function Spacing({handlespaceBtnBlock,spaceBtnBlock}) {
     return (
         <>
         <LegacyCard title="Spacing" sectioned>
@@ -13,8 +13,8 @@ export default function Spacing({rangeValue,handleRangeSliderChange}) {
                 <Grid.Cell columnSpan={{ xs: 4, sm: 3, md: 3, lg: 6, xl: 10 }}>
                     <RangeSlider
                         label="Blocksize"
-                        value={rangeValue}
-                        onChange={handleRangeSliderChange}
+                        value={45}
+                        onChange={()=>{console.log("hello")}}
                         output
                         suffix="px"
                     />
@@ -23,8 +23,8 @@ export default function Spacing({rangeValue,handleRangeSliderChange}) {
                         <TextField
                             label=""
                             type="number"
-                            value={rangeValue}
-                            onChange={handleRangeSliderChange}
+                            value={15}
+                            onChange={()=>{console.log("hello")}}
                             autoComplete="off"
                             suffix="px"
                         />
@@ -33,8 +33,8 @@ export default function Spacing({rangeValue,handleRangeSliderChange}) {
                         <TextField
                             label="Goes Up"
                             type="number"
-                            value={rangeValue}
-                            onChange={handleRangeSliderChange}
+                            value={15}
+                            onChange={()=>{console.log("hello")}}
                             autoComplete="off"
                             suffix="px"
                         />
@@ -43,8 +43,8 @@ export default function Spacing({rangeValue,handleRangeSliderChange}) {
                 <TextField
                             label="Goes Down"
                             type="number"
-                            value={rangeValue}
-                            onChange={handleRangeSliderChange}
+                            value={15}
+                            onChange={()=>{console.log("hello")}}
                             autoComplete="off"
                             suffix="px"
                         />
@@ -52,20 +52,19 @@ export default function Spacing({rangeValue,handleRangeSliderChange}) {
                 <Grid.Cell columnSpan={{ xs: 4, sm: 3, md: 3, lg: 6, xl: 10 }}>
                     <RangeSlider
                         label="Space in Between Block"
-                        value={rangeValue}
-                        onChange={handleRangeSliderChange}
+                        value={spaceBtnBlock}
+                        onChange={handlespaceBtnBlock}
                         output
-                        suffix="px"
                     />
                 </Grid.Cell>
                 <Grid.Cell columnSpan={{ xs: 4, sm: 3, md: 3, lg: 6, xl: 2 }}>
                         <TextField
                             label=""
                             type="number"
-                            value={rangeValue}
-                            onChange={handleRangeSliderChange}
+                            value={spaceBtnBlock}
+                            onChange={handlespaceBtnBlock}
                             autoComplete="off"
-                            suffix="px"
+                            suffix="%"
                         />
                 </Grid.Cell>
             </Grid>

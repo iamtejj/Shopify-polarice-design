@@ -1,11 +1,12 @@
 import {
+    Checkbox,
     Grid,
     LegacyCard,
     Text,
     TextField
 } from "@shopify/polaris";
-export default function Colors({ handleCardBgChange, handleSubTitleColor,cardBgColor ,handleTitleColor,cardTitleColor,cardSubTitleColor,handleIconColor,cardIconColor}) {
-    
+export default function Colors({ handleSetTransparent , checked,handleCardBgChange, handleSubTitleColor,cardBgColor ,handleTitleColor,cardTitleColor,cardSubTitleColor,handleIconColor,cardIconColor}) {
+
     return (
         <LegacyCard title="Colors" sectioned>
             <Grid>
@@ -48,6 +49,14 @@ export default function Colors({ handleCardBgChange, handleSubTitleColor,cardBgC
                             </TextField>
                         </Grid.Cell>
                     </Grid>
+                </Grid.Cell>
+                <Grid.Cell columnSpan={{ xs: 4, sm: 3, md: 3, lg: 6, xl: 12 }}>
+                <Checkbox
+                    label="Transparent Background"
+                    checked={checked}
+                    onChange={handleSetTransparent}
+                    />
+   
                 </Grid.Cell>
             </Grid>
         </LegacyCard>

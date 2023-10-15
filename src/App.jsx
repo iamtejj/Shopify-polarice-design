@@ -26,8 +26,19 @@ function App() {
   const [titleFontSize,setTitalFontsize] = useState(15);
   const [titleFontWeight,setTitleFontWeight] = useState('normal');
   const [titleSubFontSize,setSubTitalFontsize] = useState(15);
-  const [titleSubFontWeight,setSubTitleFontWeight] = useState('normal')
+  const [titleSubFontWeight,setSubTitleFontWeight] = useState('normal');
+  const [spaceBtnBlock,setSpaceBtnBlock] = useState(25);
+  const [checked, setChecked] = useState(false);
+  const handleSetTransparent = useCallback(
+    (newChecked) => setChecked(newChecked),
+    [],
+  );
 
+
+  const handlespaceBtnBlock = useCallback(
+    (newValue) => setSpaceBtnBlock(newValue),
+    []
+  );
   const handleSubTitleFontWeight = useCallback(
     (newValue) => setSubTitleFontWeight(newValue),
     []
@@ -110,13 +121,18 @@ function App() {
                cardSubTitleColor={cardSubTitleColor} 
                handleIconColor={handleIconColor}
                cardIconColor={cardIconColor}
+               checked={checked}
+               handleSetTransparent={handleSetTransparent}
                /> 
             </Layout.Section>
             <Layout.Section>
               <Typography titleFontSize={titleFontSize} handleTitleFont={handleTitleFont} titleSubFontSize={titleSubFontSize} handleSubTitleFont={handleSubTitleFont} titleFontWeight={titleFontWeight} handleTitleFontWeight={handleTitleFontWeight} titleSubFontWeight={titleSubFontWeight} handleSubTitleFontWeight={handleSubTitleFontWeight} handleIconColor={handleIconColor}  /> 
             </Layout.Section>
             <Layout.Section>
-             <Spacing rangeValue={rangeValue} handleRangeSliderChange={handleRangeSliderChange}  /> 
+             <Spacing 
+             spaceBtnBlock={spaceBtnBlock}
+             handlespaceBtnBlock={handlespaceBtnBlock}
+             /> 
             </Layout.Section>
           </Layout>
         </Grid.Cell>
@@ -132,6 +148,8 @@ function App() {
             titleFontWeight={titleFontWeight}
             titleSubFontWeight={titleSubFontWeight}
             cardIconColor={cardIconColor}
+            spaceBtnBlock={spaceBtnBlock}
+            checked={checked}
             />
           </LegacyCard>
         </Grid.Cell>
